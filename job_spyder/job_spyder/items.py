@@ -16,4 +16,6 @@ class JobSpyderItem(scrapy.Item):
     location = scrapy.Field()  #工作地点
     date = scrapy.Field()  #发布时间
     datasource = scrapy.Field() #消息来源
+    experience = scrapy.Field() #工作经验
+    education = scrapy.Field() #学历要求
 

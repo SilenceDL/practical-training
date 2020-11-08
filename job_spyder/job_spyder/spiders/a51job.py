@@ -13,7 +13,7 @@ class A51jobSpider(scrapy.Spider):
         # print("\n The Page is %d \n" %pages)
         for p in range(1, pages + 1):
             # print("第 %d 页 \n" %p)
-            yield Request("https://jobs.51job.com/chongqing/baoding/p" + str(p), callback=self.parsecontent,dont_filter=True)
+            yield Request("https://jobs.51job.com/baoding/p" + str(p), callback=self.parsecontent,dont_filter=True)
 
     def parsecontent(self, response):
         contents = response.xpath('//p[@class="info"]')
@@ -30,5 +30,7 @@ class A51jobSpider(scrapy.Spider):
             pushdate = "2020-" + pushdate
             item['date'] = pushdate
             item['datasource'] = '51Job'
+            item['education'] = content.xpath('//p[@class="order"]/text()[1]').extract_first('').strip()
+            item['experience'] = content.xpath('//p[@class="order"]/text()[2]').extract_first('').strip()
 
             yield item

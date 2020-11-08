@@ -29,8 +29,8 @@ class JobSpyderPipeline:
         # 数据库游标
         cue = con.cursor()
         print("Mysql connect succes!")
-        sqls = "insert into a51job(Title,Company,Salary,Location,date,DataSource) values(%s,%s,%s,%s,%s,%s)"
-        paras = (item['title'], item['company'], item['salary'], item['location'], item['date'], item['datasource'])
+        sqls = "insert into a51job(Title,Company,Salary,Location,date,DataSource,Experience,Education) values(%s,%s,%s,%s,%s,%s,%s,%s)"
+        paras = (item['title'], item['company'], item['salary'], item['location'], item['date'], item['datasource'], item['experience'], item['education'])
         # paras = ('title', 'company', 'salary', 'location', 'date', 'datasource')
 
         try:
