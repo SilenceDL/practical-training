@@ -1,0 +1,14 @@
+
+查看当前状态 git status
+新建test1.txt文件并编辑文件
+通过添加对其进行版本跟踪 git add ...
+查看当前状态
+完成第一次提交 git commit ...
+
+git check -b
+
+
+
+
+git pull
+git push origin master
